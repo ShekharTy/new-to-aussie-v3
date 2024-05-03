@@ -12,6 +12,7 @@ import NotFoundPage from './components/not-found';
 import Password from './components/password';
 import RestaurantSearch from './components/restaurant';
 import Events from './components/events';
+import SlangGame from './components/slang-game';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Password />} />
         <Route path="/password" element={<Password />} />
+        <Route path='/slang-game' element={<SlangGame/>}/>
         <Route path="/home" element={<Homepage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/road-safety" element={<RoadSafety />} />
