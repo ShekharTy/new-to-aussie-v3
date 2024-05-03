@@ -24,7 +24,6 @@ function RestaurantSearch() {
  const [filteredSuburbs, setFilteredSuburbs] = useState([]);
 
 
-
  useEffect(() => {
    document.title = `Restaurant Search`;
    // Parse CSV data and set restaurants on component mount
@@ -309,6 +308,3 @@ function RestaurantSearch() {
 
 
 export default RestaurantSearch;
-
-
-
