@@ -8,22 +8,31 @@ function SlangLearning() {
   const [results, setResults] = useState([]);
   const [slangs, setSlangs] = useState([]);
 
-  // Function to load and parse the CSV data
+  // Function to load and parse the CSV data only once
   useEffect(() => {
+    console.log("Loading CSV data...");
     Papa.parse('/data/aussie_slang.csv', {
       download: true,
       header: true,
+      skipEmptyLines: true,
       complete: function(results) {
-        setSlangs(results.data);
+        console.log("Parsed data:", results.data);
+        const filteredEntries = results.data.filter(entry => Object.values(entry).some(x => x)); // Additional check to filter out empty rows
+        const mappedSlangs = filteredEntries.map(slang => ({
+          slang: slang["Aussie slang"]?.trim(),
+          meaning: slang["Meaning"]?.trim(),
+          usage: slang["Usage"]?.trim()
+        }));
+        setSlangs(mappedSlangs);
       }
     });
-  }, []);
+  }, []); // Ensure this runs only once by setting an empty dependency array
 
   // Function to search the slang or its meaning
   const searchSlang = () => {
     const filtered = slangs.filter(slang =>
-      slang['Aussie slang'].toLowerCase().includes(term.toLowerCase()) ||
-      slang['Meaning'].toLowerCase().includes(term.toLowerCase())
+      slang.slang.toLowerCase().includes(term.toLowerCase()) ||
+      slang.meaning.toLowerCase().includes(term.toLowerCase())
     );
     setResults(filtered);
   };
@@ -35,7 +44,7 @@ function SlangLearning() {
         <input
           type="text"
           value={term}
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={(e) => setTerm(e.target.value.trim())}
           placeholder="Enter Aussie slang or English meaning"
         />
         <button onClick={searchSlang}>Search</button>
@@ -43,9 +52,9 @@ function SlangLearning() {
           {results.length > 0 ? (
             results.map((result, index) => (
               <div key={index}>
-                <strong>Slang:</strong> {result['Aussie slang']}<br />
-                <strong>Meaning:</strong> {result.Meaning}<br />
-                <strong>Usage:</strong> {result.Usage}
+                <strong>Slang:</strong> {result.slang}<br />
+                <strong>Meaning:</strong> {result.meaning}<br />
+                <strong>Usage:</strong> {result.usage}
               </div>
             ))
           ) : (
@@ -55,7 +64,7 @@ function SlangLearning() {
       </div>
       <Footer />
     </div>
-  );
+  );  
 }
 
-export default SlangLearning;
+export default Slang
