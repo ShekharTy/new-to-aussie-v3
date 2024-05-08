@@ -11,7 +11,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 function RestaurantSearch() {
  const [selectedModule, setSelectedModule] = useState("");
  const [selectedCuisine, setSelectedCuisine] = useState("");
@@ -23,16 +22,13 @@ function RestaurantSearch() {
  const [allSuburbs, setAllSuburbs] = useState([]);
  const [filteredSuburbs, setFilteredSuburbs] = useState([]);
 
-
-
- useEffect(() => {
+useEffect(() => {
    document.title = `Restaurant Search`;
    // Parse CSV data and set restaurants on component mount
    parseCSV(CuisineData);
  }, []);
 
-
- const parseCSV = (file) => {
+const parseCSV = (file) => {
    Papa.parse(file, {
      download: true,
      header: true,
