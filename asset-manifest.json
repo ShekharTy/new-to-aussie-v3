@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/new-to-aussie-v3/static/css/main.2d927ba5.css",
-    "main.js": "/new-to-aussie-v3/static/js/main.9b393b35.js",
+    "main.css": "/new-to-aussie-v3/static/css/main.b77d74c7.css",
+    "main.js": "/new-to-aussie-v3/static/js/main.6cb39d9a.js",
     "reactPlayerYouTube.js": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js",
     "reactPlayerSoundCloud.js": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js",
     "reactPlayerVimeo.js": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js",
@@ -30,6 +30,7 @@
     "static/media/bg2.jpg": "/new-to-aussie-v3/static/media/bg2.aa428b8940f96ced8602.jpg",
     "static/media/foodbg1.jpg": "/new-to-aussie-v3/static/media/foodbg1.901b797f27e3037d50b1.jpg",
     "static/media/food.jpg": "/new-to-aussie-v3/static/media/food.f679b7edabcd7c6278e8.jpg",
+    "static/media/slang.jpg": "/new-to-aussie-v3/static/media/slang.de75534c33f17a228ce1.jpg",
     "static/media/logo.png": "/new-to-aussie-v3/static/media/logo.fcfa6652f2ae4a99dfa3.png",
     "static/media/road.jpg": "/new-to-aussie-v3/static/media/road.d0de0a2b5a46550631c0.jpg",
     "static/media/breakkie.jpg": "/new-to-aussie-v3/static/media/breakkie.3b2a23564d980d00ebfc.jpg",
@@ -79,8 +80,8 @@
     "static/media/slick.ttf": "/new-to-aussie-v3/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-to-aussie-v3/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-to-aussie-v3/index.html",
-    "main.2d927ba5.css.map": "/new-to-aussie-v3/static/css/main.2d927ba5.css.map",
-    "main.9b393b35.js.map": "/new-to-aussie-v3/static/js/main.9b393b35.js.map",
+    "main.b77d74c7.css.map": "/new-to-aussie-v3/static/css/main.b77d74c7.css.map",
+    "main.6cb39d9a.js.map": "/new-to-aussie-v3/static/js/main.6cb39d9a.js.map",
     "reactPlayerYouTube.0cb0e76b.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js.map",
     "reactPlayerSoundCloud.db33077e.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js.map",
     "reactPlayerVimeo.c4ddc4a5.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js.map",
@@ -98,7 +99,7 @@
     "453.f6fb25a1.chunk.js.map": "/new-to-aussie-v3/static/js/453.f6fb25a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d927ba5.css",
-    "static/js/main.9b393b35.js"
+    "static/css/main.b77d74c7.css",
+    "static/js/main.6cb39d9a.js"
   ]
 }
