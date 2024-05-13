@@ -14,6 +14,7 @@ import RestaurantSearch from './components/restaurant';
 import Events from './components/events';
 import SlangLearning from './components/slang-learning';
 import SlangGame from './components/slang-game';
+import SlangTranslator from './components/slang-translator';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/road-safety" element={<RoadSafety />} />
         <Route path="/slang-learning" element={<SlangLearning />} />
+        <Route path="/slang-translator" element={<SlangTranslator />} />
         <Route path="/beach-safety" element={<BeachSafety />} />
         <Route path="/swimsafety" element={<SwimSafety />} />
         <Route path="/warning" element={<Warning />} />

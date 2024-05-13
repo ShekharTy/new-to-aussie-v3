@@ -113,6 +113,13 @@ function Header() {
         }}>
         Slang Scenario
       </button>
+      <button
+        className='text-black block px-4 py-2 text-sm w-full text-left hover:bg-blue-300'
+        onClick={() => {
+          navigate('/slang-translator');
+        }}>
+        Slang Translator
+      </button>
     </div>
   )}
 </div>
