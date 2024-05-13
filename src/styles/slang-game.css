@@ -1,0 +1,11 @@
+.slang-learning {
+    display: flex;
+    align-items: center;
+    min-height: 400px;
+    background: no-repeat;
+    background-size: 400px, 500px, 280px;
+    background-position-y: 96px, 96px, 90%;
+    background-position-x: left, 120%, 98%;
+    background-image: url(../data/vb.png), url(../data/kango.png), url(../data/kao.png);
+    background-attachment: fixed;
+  }

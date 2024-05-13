@@ -3,7 +3,7 @@ import Header from './header';
 import Footer from './footer';
 import VisitingFriendsHouse from './slang/visit-friend';
 import Cafe from './slang/cafe';
-
+import '../styles/slang-game.css';
 
 function SlangGame() {
     const [activeScenario, setActiveScenario] = useState(null);
@@ -46,9 +46,15 @@ function SlangGame() {
                     {renderScenarioComponent()}
                 </div>
             ) : (
-                <div className="flex-grow p-4 bg-gray-100">
-                    <h1 className="text-2xl font-bold mb-4">Choose a Slang Scenario:</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex-grow bg-gray-100">
+                    <div className="w-100 h-100 slang-learning select-none flex flex-col">
+                        <div className="container slang-container mx-auto pt-9 pb-5 flex flex-col items-center">
+                          <p className="text-5xl text-gray-600 font-bold mt-24">Aussie Slang Scenario</p>
+                        </div>
+                    </div>
+                    <h1 className="text-2xl font-bold mb-4 p-4">Choose a Slang Scenario:</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+                   
                         {scenarios.map((scenario) => (
                             <button
                                 key={scenario.id}

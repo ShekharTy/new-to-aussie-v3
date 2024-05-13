@@ -52,7 +52,7 @@ function Header() {
       />
       <div className='flex flex-col md:flex-row justify-center items-center'>
 
-        {['/home', '/events', '/restaurant', '/slang-learning'].map(path => (
+        {['/home', '/events', '/restaurant'].map(path => (
           <button
 
             key={path}
@@ -90,25 +90,32 @@ function Header() {
           )}
         </div>
         <div className='relative' ref={aussieSlangDropdownRef}>
-          <button
-            className='text-white px-3 py-2 rounded-md text-xl font-medium m-2 transition-colors duration-200 hover:bg-blue-700 flex items-center'
-            style={buttonStyle}
-            onClick={(e) => handleClick(e, aussieSlangDropdownRef, isAussieSlangDropdownOpen, setAussieSlangDropdownOpen)}
-          >
-            Aussie Slang <span className='ml-2 text-xs'>▼</span>
-          </button>
-          {isAussieSlangDropdownOpen && (
-            <div className='absolute left-0 mt-2 w-36 bg-white shadow-lg rounded-md z-50'>
-              <button
-                className='text-black block px-4 py-2 text-sm w-full text-left hover:bg-blue-300'
-                onClick={() => {
-                  navigate('/slang-game');
-                }}>
-                Slang Game
-              </button>
-            </div>
-          )}
-        </div>
+  <button
+    className='text-white px-3 py-2 rounded-md text-xl font-medium m-2 transition-colors duration-200 hover:bg-blue-700 flex items-center'
+    style={buttonStyle}
+    onClick={(e) => handleClick(e, aussieSlangDropdownRef, isAussieSlangDropdownOpen, setAussieSlangDropdownOpen)}
+  >
+    Aussie Slang <span className='ml-2 text-xs'>▼</span>
+  </button>
+  {isAussieSlangDropdownOpen && (
+    <div className='absolute left-0 mt-2 w-36 bg-white shadow-lg rounded-md z-50'>
+      <button
+        className='text-black block px-4 py-2 text-sm w-full text-left hover:bg-blue-300'
+        onClick={() => {
+          navigate('/slang-learning');
+        }}>
+        Slang Search
+      </button>
+      <button
+        className='text-black block px-4 py-2 text-sm w-full text-left hover:bg-blue-300'
+        onClick={() => {
+          navigate('/slang-game');
+        }}>
+        Slang Scenario
+      </button>
+    </div>
+  )}
+</div>
       </div>
     </div>
   );
