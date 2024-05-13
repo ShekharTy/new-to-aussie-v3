@@ -18,9 +18,9 @@ function RestaurantDetails({ name, cuisine, phone, address, rating, web_url }) {
   console.log('Phone:', phone);
   console.log('Address:', address);
   return (
-    <a className="max-w-md mx-auto flex justify-around flex-col group bg-white rounded-lg overflow-hidden hover:shadow-lg transition" href="#" style={{ flex: '1 1 300px' }}>
+    <a className="max-w-md mx-auto flex justify-around flex-col group bg-white rounded-lg overflow-hidden hover:shadow-lg transition" href={web_url} target="_blank" rel="noopener noreferrer" style={{ flex: '1 1 300px' }}>
       <div className="relative pt-[40%] sm:pt-[50%] lg:pt-[60%] rounded-t-lg overflow-hidden">
-        <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl" src={cafeImage} alt="Breakfast Suggestions" href={web_url} target="_blank" rel="noopener noreferrer" />
+        <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl" src={cafeImage} alt="Breakfast Suggestions" />
       </div>
       <div className="p-2 md:p-3">
         <h3 className="text-xl font-bold text-gray-800 dark:text-black">{name}</h3>
@@ -28,12 +28,11 @@ function RestaurantDetails({ name, cuisine, phone, address, rating, web_url }) {
         <p className="mt-1 text-xs md:text-sm text-black">{phone}</p>
         <p className="mt-1 text-xs md:text-sm text-black">{address}</p>
         <p className="mt-1 text-xs md:text-sm text-black">Ratings: {rating}</p>
-        <p className="mt-1 text-xs md:text-sm text-black">Website url: {web_url}</p>
       </div>
     </a>
   );
 }
-
+  
 function BreakfastRestaurants() {
   const [breakfastRestaurants, setBreakfastRestaurants] = useState([]);
   const [asianRestaurants, setAsianRestaurants] = useState([]);
