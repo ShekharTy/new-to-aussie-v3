@@ -1,0 +1,706 @@
+[
+  {
+    "id": "001",
+    "category": "flag",
+    "name": "Red and Yellow Flags",
+    "description": "Swim beteween flags. They show the area under beach  supervision, indicating that  lifeguards are observing the area.",
+    "image": "red_yellow_flag.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "002",
+    "category": "flag",
+    "name": "Swim Between the flags",
+    "description": "The symbol indicates it is a swimming area and you should swim between the red and yellow flags only.",
+    "image": "swim_between_flags.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "003",
+    "category": "flag",
+    "name": "Red Flag",
+    "description": "Extremely dangerous. You should not enter the ocean.",
+    "image": "red_flag.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "004",
+    "category": "flag",
+    "name": "Yellow Flag",
+    "description": "Caution is required. Be careful of potential hazards in the water such as large waves or sharks",
+    "image": "yellow_flag.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "005",
+    "category": "flag",
+    "name": "Black and White Flag",
+    "description": "Surfcraft riding area boundary. Avoid swimming in surfcraft areas if at all possible.",
+    "image": "black_white_flag.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "006",
+    "category": "flag",
+    "name": "Red and White Flag",
+    "description": "Emergency evacuation. Evacuate the water immediately for a variety of reasons, including sharks and hurricanes.",
+    "image": "red_white_flag.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "007",
+    "category": "regulations",
+    "name": "No Swimming",
+    "description": "No swimming in the area.",
+    "image": "no_swim.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "008",
+    "category": "regulations",
+    "name": "No Alcohol",
+    "description": "No alcohol is allowed in the area.",
+    "image": "no_alcohol.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "009",
+    "category": "regulations",
+    "name": "No Frame",
+    "description": "Open flames or the use of fire are prohibited in the area.",
+    "image": "no_frame.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "010",
+    "category": "regulations",
+    "name": "No Vehicles",
+    "description": "No vehicles is allowed in the area.",
+    "image": "no_vehicle.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "011",
+    "category": "regulations",
+    "name": "Vessels Prohibited",
+    "description": "Vessels, such as boats, jet skis, or other watercraft, is not allowed in the area.",
+    "image": "no_vessels.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "012",
+    "category": "regulations",
+    "name": "Camping Prohibited",
+    "description": "Camping is prohibited in the area.",
+    "image": "no_camping.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "013",
+    "category": "regulations",
+    "name": "Water Skiing Prohibited",
+    "description": "Water skiing is prohibited in the area.",
+    "image": "no_water_ski.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "014",
+    "category": "regulations",
+    "name": "No Fishing",
+    "description": "Fishing is prohibited in the area.",
+    "image": "no_fising.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "015",
+    "category": "regulations",
+    "name": "No Dogs",
+    "description": "No dogs is allowed in the area.",
+    "image": "no_dogs.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "016",
+    "category": "warnings",
+    "name": "Long Beach",
+    "description": "Warning of potential hazards or regulations such as strong winds.",
+    "image": "warning.png",
+    "copyrights": "DumbLegends"
+  },
+  {
+    "id": "017",
+    "category": "warnings",
+    "name": "Large Waves",
+    "description": "Waves are of significant size and strength, posing a potential danger.",
+    "image": "big_waves.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "018",
+    "category": "warnings",
+    "name": "Marine Stingers",
+    "description": "Alert about the presence of dangerous marine stingers, such as jellyfish or Portuguese man o' wars, in the water.",
+    "image": "stingers.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "019",
+    "category": "warnings",
+    "name": "Floating Stingers",
+    "description": "Warning about potential dangers of stings. Floating stingers, such as jellyfish, can pose a threat to swimmers.",
+    "image": "float_stingers.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "020",
+    "category": "warnings",
+    "name": "Swimming Not Advised",
+    "description": "Swimming in the area is not recommended or advised due to various potential hazards.",
+    "image": "warn_swim.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "021",
+    "category": "warnings",
+    "name": "Shallow Water",
+    "description": "Alert for the areas where the water depth is shallow. Not suitable for diving.",
+    "image": "shallow.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "022",
+    "category": "warnings",
+    "name": "Deep Water",
+    "description": "Warning of the dangers from deep water.",
+    "image": "deep_water.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "023",
+    "category": "warnings",
+    "name": "Rip",
+    "description": "Warning of the potential danger posed by rip currents, which can pull swimmers away from the shore and into deeper water.",
+    "image": "rip.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "024",
+    "category": "warnings",
+    "name": "Sudden drop off",
+    "description": "The areas with sudden drop-offs or strong currents require extra vigilance from swimmers.",
+    "image": "gutters.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "025",
+    "category": "warnings",
+    "name": "Sharks",
+    "description": "Alert to the potential presence of sharks in the water.",
+    "image": "sharks.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "026",
+    "category": "warnings",
+    "name": "Snakes",
+    "description": "Warning for the detected sea snakes in the area around the beach.",
+    "image": "snake.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "027",
+    "category": "warnings",
+    "name": "Crocodile",
+    "description": "Warning has been issued regarding the presence of a crocodile in the water.",
+    "image": "crocodile.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "028",
+    "category": "warnings",
+    "name": "Submerged Rocks",
+    "description": "Be warned that there are submerged rocks that may pose a danger if you are unaware of their presence.",
+    "image": "submerged_rock.png",
+    "copyrights": "Surf Life Saving Queensland"
+  },
+  {
+    "id": "029",
+    "category": "regulations",
+    "name": "Buses Only",
+    "description": "Designated areas exclusively for bus use, prohibiting entry to other vehicles and ensuring priority access for public transportation.",
+    "image": "bus_only.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "030",
+    "category": "regulations",
+    "name": "Bus Zone",
+    "description": "The specific areas are primarily intended for use by buses, facilitating efficient public transportation operations and traffic flow management.",
+    "image": "bus_zone.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "031",
+    "category": "regulations",
+    "name": "Clearway",
+    "description": "Indicating sections of road where stopping and parking are strictly prohibited during specified times, ensuring unobstructed traffic flow.",
+    "image": "clearway.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "032",
+    "category": "regulations",
+    "name": "End of Shared Zone",
+    "description": "Mark the conclusion of an area where pedestrians, cyclists, and vehicles share the road, transitioning back to separate traffic lanes.",
+    "image": "end_shared_zone.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "033",
+    "category": "regulations",
+    "name": "End of Speed Limit",
+    "description": "Indicate the termination of a designated speed limit zone, allowing drivers to resume driving at unrestricted speeds.",
+    "image": "end_speed_limit.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "034",
+    "category": "regulations",
+    "name": "Give Way",
+    "description": "Instruct drivers to yield the right-of-way to vehicles approaching from other directions at intersections or junctions.",
+    "image": "give_way.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "035",
+    "category": "regulations",
+    "name": "Give Way At Roundabout",
+    "description": "Instruct drivers to yield the right-of-way to vehicles already in the roundabout before entering, promoting smooth traffic flow and safety at intersections.",
+    "image": "give_way_roundabout.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "036",
+    "category": "regulations",
+    "name": "Hand Held Stop Sign (for roadworks)",
+    "description": "Alert to come to a complete stop and follow the directions of the flagger during construction or maintenance activities.",
+    "image": "handheld_stop.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "037",
+    "category": "regulations",
+    "name": "Right Turn from Left Only (Hook Turn)",
+    "description": "Indicate to drivers that they must make a right turn from the leftmost lane at a designated intersection, typically found in areas with tram tracks to improve safety and traffic flow.",
+    "image": "hook_turn.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "038",
+    "category": "regulations",
+    "name": "Loading Zone",
+    "description": "The specific areas where temporary stopping and loading or unloading of goods or passengers is permitted, facilitating efficient commercial activities and passenger pick-up/drop-off.",
+    "image": "loading_zone.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "039",
+    "category": "regulations",
+    "name": "Local Traffic Area",
+    "description": "Indicate that the area is primarily intended for local traffic, typically limiting through traffic and promoting the safety and convenience of residents.",
+    "image": "local_traffic_area.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "040",
+    "category": "regulations",
+    "name": "No Parking",
+    "description": "Indicate that stopping, standing, or parking of vehicles is prohibited in the designated area.",
+    "image": "no_parking.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "041",
+    "category": "regulations",
+    "name": "No Stopping",
+    "description": "Indicate that halting or parking of vehicles is prohibited in the designated area.",
+    "image": "no_stopping.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "042",
+    "category": "regulations",
+    "name": "Turn Left",
+    "description": "Inform that they should make a left-hand turn at the upcoming intersection or designated location.",
+    "image": "only_left.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "043",
+    "category": "regulations",
+    "name": "Turn Right",
+    "description": "Inform to make a right-hand turn at the upcoming intersection or designated location.",
+    "image": "only_right.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "044",
+    "category": "regulations",
+    "name": "No Turns",
+    "description": "Indicate that drivers are prohibited from making any turns at the designated location or intersection.",
+    "image": "only_straight.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "045",
+    "category": "regulations",
+    "name": "Parking Permitted (Minutes)",
+    "description": "Parking is allowed for a limited duration, typically indicated by a specific time frame designated number of minutes, within the outlined regulations.",
+    "image": "parking_permitted_m.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "046",
+    "category": "regulations",
+    "name": "Parking Permitted (Hours)",
+    "description": "Parking is allowed for a limited duration, typically indicated by a specific time frame, such as certain hours of the day within the outlined regulations.",
+    "image": "parking_permitted_h.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "047",
+    "category": "regulations",
+    "name": "Pedestrian Crossing",
+    "description": "Alert to the presence of a crosswalk where pedestrians may be crossing the road, urging them to be cautious and yield to pedestrians.",
+    "image": "pedestrian.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "048",
+    "category": "regulations",
+    "name": "Railway Crossing",
+    "description": "Alerting of an upcoming intersection with railroad tracks, advising them to be cautious and yield to oncoming trains.",
+    "image": "rail_crossing.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "049",
+    "category": "regulations",
+    "name": "Speed Limit School Zone",
+    "description": "Indicate a reduced speed limit in the vicinity of a school to ensure the safety of children and pedestrians in the area during school hours.",
+    "image": "school_time_zone.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "050",
+    "category": "regulations",
+    "name": "Speed Limit School Zone",
+    "description": "Indicate a reduced speed limit in the vicinity of a school to ensure the safety of children and pedestrians in the area during school hours.",
+    "image": "school_time_zone_n.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "051",
+    "category": "regulations",
+    "name": "Shared Zone",
+    "description": "designate areas where pedestrians, cyclists, and vehicles share the same space, typically with reduced speed limits and priority given to pedestrians.",
+    "image": "shared_zone.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "052",
+    "category": "regulations",
+    "name": "Speed Limit",
+    "description": "Indicate the maximum legal speed allowed for vehicles on a particular road or section of road. The maximum speed is represented by the number inside the red circle on the sign.",
+    "image": "speed_limit.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "053",
+    "category": "regulations",
+    "name": "Speed Limit Zone Area",
+    "description": "Designate specific areas where a reduced speed limit is enforced.",
+    "image": "speed_limit_area.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "054",
+    "category": "regulations",
+    "name": "Speed De-restriction",
+    "description": "Indicate the end of a previously imposed speed limit, allowing drivers to resume driving at the regular speed limit for the area.",
+    "image": "speed_limit_re.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "055",
+    "category": "regulations",
+    "name": "Roadwork Speed Limit",
+    "description": "Indicate a temporary reduction in the maximum legal speed allowed for vehicles in an area undergoing road construction or maintenance.",
+    "image": "speed_limit_roadwork.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "056",
+    "category": "regulations",
+    "name": "Wet weather speed limit ahead",
+    "description": "Alerting of upcoming conditions where reduced speeds are advised due to wet weather conditions.",
+    "image": "speed_limit_wet.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "057",
+    "category": "regulations",
+    "name": "Stop",
+    "description": "Instruct to come to a complete halt at the designated intersection or junction, ensuring safety and yielding to other traffic before proceeding.",
+    "image": "stop.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "058",
+    "category": "regulations",
+    "name": "Tram Lane",
+    "description": "This lane is designated exclusively for tram vehicles, ensuring their unimpeded flow and safety along the designated route.",
+    "image": "tram_lane.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "059",
+    "category": "warning",
+    "name": "Falling Rocks",
+    "description": "Alert to the potential hazard of rocks or debris falling onto the roadway from cliffs or slopes, prompting caution and vigilance while driving in the area.",
+    "image": "fallen_rocks.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "060",
+    "category": "warning",
+    "name": "Floodway",
+    "description": "Indicate areas prone to flooding during heavy rainfall or high water levels, warning drivers to exercise caution and avoid driving through flooded sections of the road.",
+    "image": "floodway.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "061",
+    "category": "warning",
+    "name": "Island",
+    "description": "Warning of a traffic island or median on the roadway.",
+    "image": "island.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "062",
+    "category": "warning",
+    "name": "Left Lane Ends",
+    "description": "Warnning that the left lane of the road is about to merge or end, prompting them to merge safely into the adjacent lanes.",
+    "image": "left_lane_ends.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "063",
+    "category": "warning",
+    "name": "Merge Right",
+    "description": "Instruct to transition into the right lane ahead due to an upcoming merge point, ensuring smooth traffic flow and safe merging maneuvers.",
+    "image": "merge_right.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "064",
+    "category": "warning",
+    "name": "Railway Level Crossing with Flashing Signals ahead",
+    "description": "Warning of an upcoming railway crossing equipped with flashing signals, prompting them to be prepared to stop and yield to approaching trains.",
+    "image": "rail_signal.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "065",
+    "category": "warning",
+    "name": "Road Ends",
+    "description": "Indicate that the road ahead terminates or does not continue beyond the designated point, advising drivers to prepare for the end of the road and to take appropriate actions such as turning or merging.",
+    "image": "road_ends.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "066",
+    "category": "warning",
+    "name": "Roundabout Ahead",
+    "description": "Warning of an upcoming circular intersection where traffic flows counterclockwise around a central island, prompting them to prepare for the roundabout and yield to entering traffic.",
+    "image": "roundabout_ahead.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "067",
+    "category": "warning",
+    "name": "Traffic Lights ahead",
+    "description": "Warning of an upcoming intersection or junction equipped with traffic signals, prompting them to prepare for potential stops and adhere to the signaled instructions.",
+    "image": "signals_ahead.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "068",
+    "category": "warning",
+    "name": "Slippery Road",
+    "description": "Warning of hazardous road conditions, typically due to rain, ice, or oil spills, prompting them to reduce speed and exercise caution to prevent accidents.",
+    "image": "slippery_surface.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "069",
+    "category": "warning",
+    "name": "Road Bump",
+    "description": "Warning of upcoming uneven road surfaces or speed bumps, prompting them to reduce speed and proceed with caution to ensure a smooth and safe journey.",
+    "image": "road_bump.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "070",
+    "category": "warning",
+    "name": "Tram Crossing",
+    "description": "Indicate that a tram or light rail line intersects with the road ahead, cautioning drivers to be aware of tram traffic.",
+    "image": "w_tram.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "071",
+    "category": "warning",
+    "name": "Camels crossing",
+    "description": "Warning of the possibility of camels crossing the road, particularly in areas where such encounters are common, urging caution and awareness.",
+    "image": "w_camels.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "072",
+    "category": "warning",
+    "name": "Emus crossing",
+    "description": "Warning of the potential presence of emus crossing the road, advising caution and awareness, especially in regions where such encounters are frequent.",
+    "image": "w_emus.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "073",
+    "category": "warning",
+    "name": "Wild Horses Crossing",
+    "description": "Warning of the potential presence of wild horses crossing the road, emphasizing caution and awareness, particularly in areas where such occurrences are common.",
+    "image": "w_horses.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "074",
+    "category": "warning",
+    "name": "Kangaroos",
+    "description": "Warning of the possibility of kangaroos crossing the road, urging caution and awareness, especially in regions where kangaroo populations are prevalent.",
+    "image": "w_kangaroo.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "075",
+    "category": "warning",
+    "name": "Koalas Crossing",
+    "description": "Warning of the potential presence of koalas crossing the road, emphasizing the need for caution and awareness, particularly in areas where koalas are known to inhabit.",
+    "image": "w_koalas.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "076",
+    "category": "warning",
+    "name": "Aircraft",
+    "description": "Warning of the proximity of low-flying aircraft, advising caution and awareness, especially in areas near airports or flight paths.",
+    "image": "w_plane.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "077",
+    "category": "warning",
+    "name": "Wild Animals",
+    "description": "Warning of the potential presence of various wild animals on or near the road, emphasizing the need for caution and awareness to prevent collisions.",
+    "image": "w_wild_animal.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "078",
+    "category": "warning",
+    "name": "Wombats Crossing",
+    "description": "Warning of the potential crossing of wombats across the road, urging drivers to exercise caution and awareness, particularly in areas where wombats are known to inhabit.",
+    "image": "w_wombats.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "079",
+    "category": "warning",
+    "name": "Winding road",
+    "description": "Indicate upcoming sections of the road with numerous curves or bends, advising drivers to anticipate changes in direction and adjust their speed accordingly for safety.",
+    "image": "winding_road.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "080",
+    "category": "warning",
+    "name": "Low Tree Branches",
+    "description": "Warning of the presence of tree branches hanging low over the road, urging them to be cautious and mindful to avoid collisions or damage to their vehicles.",
+    "image": "low_tree.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "081",
+    "category": "warning",
+    "name": "Steep Descent",
+    "description": "Warning of an upcoming steep slope on the road, advising them to reduce speed and exercise caution to navigate safely downhill.",
+    "image": "steep_descent.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "082",
+    "category": "warning",
+    "name": "Steep Ascent",
+    "description": "Warning of an upcoming steep incline on the road, prompting them to adjust their speed and gear accordingly for safe ascent.",
+    "image": "steep_ascent.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "083",
+    "category": "warning",
+    "name": "Stock Crossing",
+    "description": "Warning of the potential presence of livestock crossing the road, urging caution and awareness, particularly in rural or agricultural areas.",
+    "image": "w_stock.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "084",
+    "category": "warning",
+    "name": "Deer",
+    "description": "Warning of the potential presence of deer crossing the road, emphasizing the need for caution and awareness, especially in areas known for high deer populations.",
+    "image": "w_deer.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "085",
+    "category": "roadwork",
+    "name": "End Roadwork",
+    "description": "Indicate the conclusion of ongoing road construction or maintenance activities, indicating that normal driving conditions have resumed.",
+    "image": "end_roadwork.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "086",
+    "category": "roadwork",
+    "name": "Roadwork Ahead",
+    "description": "Warning of the presence of construction or maintenance activities on the road ahead, advising them to be prepared for potential delays or changes in traffic flow.",
+    "image": "roadwork_ahead.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "087",
+    "category": "others",
+    "name": "Road Safety Cameras Operate",
+    "description": "Inform that surveillance cameras are in operation in the vicinity to monitor and enforce traffic regulations, promoting adherence to road safety standards.",
+    "image": "safety_camera.png",
+    "copyrights": "wikimediacommons"
+  },
+  {
+    "id": "088",
+    "category": "others",
+    "name": "Speed & Red Light Cameras Operate",
+    "description": "Inform that surveillance cameras are active in the area to detect and enforce speed limits and red light violations, promoting compliance with traffic regulations and enhancing road safety.",
+    "image": "speed_camera.png",
+    "copyrights": "wikimediacommons"
+  }
+]

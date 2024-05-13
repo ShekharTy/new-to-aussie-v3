@@ -10,6 +10,7 @@ import ScenarioComponent from './components/scenario-component';
 import Attributions from './components/attribution';
 import NotFoundPage from './components/not-found';
 import Password from './components/password';
+import Signsearch from './components/sign-search';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/scenario-component" element={<ScenarioComponent />} />
         <Route path="/attribution" element={<Attributions />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/sign-search" element={<Signsearch />} />
       </Routes>
     </Router>
   );
