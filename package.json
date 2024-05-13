@@ -1,5 +1,5 @@
 {
-  "homepage": "https://shekharty.github.io/new-to-aussie-v2/",
+  "homepage": "https://shekharty.github.io/new-to-aussie-v3/",
   "name": "ie_project",
   "version": "0.1.0",
   "private": true,
@@ -23,8 +23,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-player": "^2.16.0",
     "react-router-dom": "^6.22.3",
     "react-slick": "^0.30.2",
+    "react-scripts": "version_number",
     "recharts": "^2.12.4",
     "requirements": "^1.4.1",
     "slick-carousel": "^1.8.1",

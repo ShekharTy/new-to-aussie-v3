@@ -1,0 +1,43 @@
+.slang-learning {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  background: no-repeat;
+  background-size: 400px, 500px, 280px;
+  background-position-y: 96px, 96px, 90%;
+  background-position-x: left, 120%, 98%;
+  background-image: url(../data/vb.png), url(../data/kango.png), url(../data/kao.png);
+  background-attachment: fixed;
+}
+
+.slang-input {
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  min-width: 50%;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 3rem #f0f0f0;
+  background-color: #fefefe;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.slang-promote {
+  min-width: 50%;
+  padding: 0.3rem 2rem;
+  font-size: 0.9rem;
+}
+
+.slang-promote span {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.slang-input:focus {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 2rem #eee;
+}
