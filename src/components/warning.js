@@ -4,8 +4,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/warning.css';
 
-
-// Array of image data
 const imageData = [
     {
         imageSrc: require('../data/warning.png'),
@@ -64,39 +62,24 @@ const imageData = [
 ];
 
 function Warning() {
-    const sliderRef = useRef(null); // Reference to the Slider component
-
-    // State to track the number of flags
+    const sliderRef = useRef(null);
     const [flagCounter, setFlagCounter] = useState(0);
-
-    // Function to update the flag counter when changing slides
+    
     const handleSlideChange = (currentSlide) => {
-        setFlagCounter(currentSlide + 1); // Slide index starts from 0, so add 1
+        setFlagCounter(currentSlide + 1); 
     };
 
-    // Function to handle clicking on the previous button
     const prevSlide = () => {
-        sliderRef.current.slickPrev(); // Go to the previous slide
+        sliderRef.current.slickPrev(); 
     };
-
-    // Function to handle clicking on the next button
     const nextSlide = () => {
-        sliderRef.current.slickNext(); // Go to the next slide
+        sliderRef.current.slickNext();
     };
 
     return (
-        <div id="warning">
-            <h2>Welcome to the section dedicated to beach warning signs learning!</h2> 
-            <p className="InstructionsWarningFlags">Click on  below previous and next buttons to learn about each warning signs meaning.</p>
-            <p>Diamond-shaped signs in yellow and black serve as warnings about potential hazards at the beach.</p>
-            
-            <h3>Importance of Beach Warning Signs</h3>
-            <p>
-            Beach warning signboards are crucial because they provide vital information about potential hazards and safety guidelines to beachgoers. They serve as visual aids to educate and alert individuals about dangers such as strong currents, dangerous marine life, 
-            prohibited activities, and other risks specific to the beach environment. 
-            By understanding and adhering to the information conveyed through these signboards, beach visitors can make informed decisions to stay safe, prevent accidents, and ensure an enjoyable beach experience for themselves and others..
-            </p> 
-            <div className="flag-box">
+    <div id="warning">
+        <h2> Beach Warning Signs </h2>
+        <div className="flag-box">
             <Slider
                 ref={sliderRef}
                 dots={true}
@@ -116,9 +99,7 @@ function Warning() {
                     />
                 ))}
             </Slider>
-            {/* Flag Counter */}
             <div className="flag-counter"> Warning Sign {flagCounter} / {imageData.length}</div>
-            {/* Navigation buttons */}
             <div className="navigation-buttons">
                 <button onClick={prevSlide} style={{ backgroundColor: 'blue' }}>Previous Flag</button>
                 <button onClick={nextSlide} style={{ backgroundColor: 'blue' }}>Next Flag</button>
