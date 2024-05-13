@@ -1,310 +1,268 @@
-import React, { useEffect, useState } from "react";
-import Papa from "papaparse";
+import React, { useState, useEffect } from 'react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import Header from "./header";
 import Footer from "./footer";
-import CuisineData from "../data/cuisineFinal.csv"; // Importing the CSV file
-import "animate.css/animate.css";
-import bannerImage from "../data/restaurant_banner.jpg";
-import SpinWheel from "./spin-wheel";
-import foodBackground from "../data/restaurant_banner.jpg"; // Common food background image
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import CardComponent from './card'; 
+import '@splidejs/react-splide/css'; 
+import bannerImage from '../data/foodbg1.jpg';
+import cafeImage from '../data/breakkie.jpg';
+import breakfastpic from '../data/bfcard.jpg';
+import asianFood from '../data/asianFoodCardPic.jpg';
+import funFact1 from '../data/vegemite.jpg';
+import funFact2 from '../data/coffee.jpg';
+import funFact3 from '../data/melb_multiculture.jpg';
+import funFact4 from '../data/man_eating.jpg';
 
-
-function RestaurantSearch() {
- const [selectedModule, setSelectedModule] = useState("");
- const [selectedCuisine, setSelectedCuisine] = useState("");
- const [selectedSuburb, setSelectedSuburb] = useState("");
- const [restaurants, setRestaurants] = useState([]);
- const [filteredRestaurants, setFilteredRestaurants] = useState([]);
- const [allCuisines, setAllCuisines] = useState([]);
- const [filteredCuisines, setFilteredCuisines] = useState([]);
- const [allSuburbs, setAllSuburbs] = useState([]);
- const [filteredSuburbs, setFilteredSuburbs] = useState([]);
-
-
- useEffect(() => {
-   document.title = `Restaurant Search`;
-   // Parse CSV data and set restaurants on component mount
-   parseCSV(CuisineData);
- }, []);
-
-
- const parseCSV = (file) => {
-   Papa.parse(file, {
-     download: true,
-     header: true,
-     complete: (result) => {
-       console.log("Parsed data:", result.data);
-       const allRestaurants = result.data
-         .map((row) => ({
-           cuisine: row["Cuisine"] && row["Cuisine"].trim(), // Trim whitespace and handle undefined/null
-           name: row["Trading name"],
-           suburb: row["Suburb"],
-           googleLink: row["Google Search Link"],
-         }))
-         .filter((restaurant) => restaurant.cuisine);
-
-
-       // Extract unique cuisines
-       const uniqueCuisines = [
-         ...new Set(allRestaurants.map((restaurant) => restaurant.cuisine)),
-       ];
-       setAllCuisines(uniqueCuisines);
-       setFilteredCuisines(uniqueCuisines);
-       setRestaurants(allRestaurants);
-
-
-       // Extract unique suburb names
-       const suburbs = result.data
-         .map((row) => row["Suburb"])
-         .filter((suburb) => suburb);
-       const uniqueSuburbs = [...new Set(suburbs)];
-       setAllSuburbs(uniqueSuburbs);
-       setFilteredSuburbs(uniqueSuburbs);
-     },
-   });
- };
-
-
- const handleCuisineChange = (event) => {
-   const value = (event.target.value || "").trim().toLowerCase(); // Trim whitespaces from input value
-   setSelectedCuisine(value);
-
-
-   if (allCuisines && allCuisines.length > 0) {
-     if (value.length > 0) {
-       const filtered = allCuisines.filter((cuisine) =>
-         cuisine.trim().toLowerCase().startsWith(value)
-       );
-       setFilteredCuisines(filtered);
-     } else {
-       setSelectedCuisine(""); // If value is empty, clear the selected cuisine
-       setFilteredCuisines([]); // Clear the filtered cuisines
-     }
-   }
- };
-
-
- const handleSuburbChange = (event) => {
-   const value = event.target.value; // Get the value from the event
-   if (value) {
-     const trimmedValue = value.trim().toLowerCase(); // Trim whitespaces and convert to lowercase
-     setSelectedSuburb(trimmedValue);
-
-
-     const filtered = allSuburbs.filter((suburb) =>
-       suburb.trim().toLowerCase().startsWith(trimmedValue)
-     );
-     setFilteredSuburbs(filtered);
-   } else {
-     setSelectedSuburb(""); // If value is empty, clear the selected suburb
-     setFilteredSuburbs([]); // Clear the filtered suburbs
-   }
- };
-
-
- const handleCuisineSelect = (cuisine) => {
-   setSelectedCuisine(cuisine);
-   filterRestaurants(cuisine, selectedSuburb);
-   setFilteredCuisines([]);
- };
-
-
- const handleSuburbSelect = (suburb) => {
-   setSelectedSuburb(suburb);
-   filterRestaurants(selectedCuisine, suburb);
-   setFilteredSuburbs([]);
- };
-
-
- const filterRestaurants = (selectedCuisine, selectedSuburb) => {
-   const filtered = restaurants.filter((restaurant) => {
-     if (restaurant && restaurant.cuisine && restaurant.suburb) {
-       return (
-         restaurant.cuisine.toLowerCase() === selectedCuisine.toLowerCase() &&
-         restaurant.suburb.toLowerCase() === selectedSuburb.toLowerCase()
-       );
-     }
-     return false;
-   });
-   setFilteredRestaurants(filtered);
- };
-
-
- return (
-   <div>
-     <Header />
-     {/* Banner */}
-     <div className="relative bg-cover bg-center h-64 flex flex-col justify-center items-center text-white">
-       <img
-         src={bannerImage}
-         alt="Banner"
-         className="absolute inset-0 h-full w-full object-cover opacity-100"
-       />
-       <div className="absolute top-1/3 transform -translate-y-1/2 text-center">
-         <h1 className="text-5xl font-bold text-stone-50">Restaurants</h1>
-         <p className="text-xxl text-stone-50 text-decoration-thickness: 2px;">
-           Discover amazing dining experiences
-         </p>
-       </div>
-     </div>
-
-     {/* Options */}
-     <div className="body flex flex-col items-center mt-8 ml-64">
-           <div className="bg-gray-200 p-4 w-3/4 rounded-lg shadow-lg">
-             <ul className="mt-4 grid grid-cols-2 gap-4">
-               <li
-                 className={`cursor-pointer bg-white rounded-md shadow-lg p-4 transition duration-300 transform hover:shadow-xl hover:scale-105 ${
-                   selectedModule === "Search Restaurant"
-                     ? "border-2 border-blue-600"
-                     : ""
-                 }`}
-                 onClick={() => setSelectedModule("Search Restaurant")}
-               >
-                 <h3 className="text-xl font-semibold">
-                   Search Restaurant by Cuisine
-                 </h3>
-                 <p className="text-gray-600">
-                   Find restaurants based on your preferred cuisine.
-                 </p>
-               </li>
-               <li
-                 className={`cursor-pointer bg-white rounded-md shadow-lg p-4 transition duration-300 transform hover:shadow-xl hover:scale-105 ${
-                   selectedModule === "Play Spin Wheel"
-                     ? "border-2 border-blue-600"
-                     : ""
-                 }`}
-                 onClick={() => setSelectedModule("Play Spin Wheel")}
-               >
-                 <h3 className="text-xl font-semibold">Play Spin Wheel</h3>
-                 <p className="text-gray-600">
-                   Content for Play Spin Wheel goes here.
-                 </p>
-               </li>
-             </ul>
-           </div>
-         </div>
-
-
-     {selectedModule !== "Play Spin Wheel" && (
-       <>
-         {/* Search Bar */}
-         <div className="search-bar flex flex-col mt-8 items-center">
-           <div className="mb-4">
-             <label
-               htmlFor="cuisine"
-               className="mr-4 text-lg text-blue-600 font-bold"
-             >
-               Type your preferred cuisine here:
-             </label>
-             <input
-               type="text"
-               id="cuisine"
-               className="border-2 border-gray-500 bg-blue-600 h-10 px-5 pr-10 rounded-lg text-lg text-stone-50 focus:outline-none w-96"
-               value={selectedCuisine}
-               onChange={handleCuisineChange}
-             />
-             {selectedCuisine && /[a-zA-Z]/.test(selectedCuisine) && (
-               <div className="mt-2 w-full bg-white rounded-md shadow-lg">
-                 <ul className="divide-y divide-gray-200">
-                   {filteredCuisines.map((cuisine, index) => (
-                     <li
-                       key={index}
-                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                       onClick={() => handleCuisineSelect(cuisine)}
-                     >
-                       {cuisine}
-                     </li>
-                   ))}
-                 </ul>
-               </div>
-             )}
-           </div>
-           <div>
-             <label
-               htmlFor="suburb"
-               className="mr-4 text-lg  text-blue-600 font-bold"
-             >
-               Type your preferred suburb here:
-             </label>
-             <input
-               type="text"
-               id="suburb"
-               className="border-2 border-gray-300 bg-blue-600 h-10 px-5 pr-10 rounded-lg text-lg text-stone-50 focus:outline-none w-96"
-               value={selectedSuburb}
-               onChange={handleSuburbChange}
-             />
-             {/* Render the suburb dropdown only when there are letters inputted */}
-             {selectedSuburb && /[a-zA-Z]/.test(selectedSuburb) && (
-               <div className="mt-2 w-full bg-white rounded-md shadow-lg">
-                 <ul className="divide-y divide-gray-200">
-                   {filteredSuburbs.map((suburb, index) => (
-                     <li
-                       key={index}
-                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                       onClick={() => handleSuburbSelect(suburb)}
-                     >
-                       {suburb}
-                     </li>
-                   ))}
-                 </ul>
-               </div>
-             )}
-           </div>
-         </div>
-         <div style={{ backgroundImage: `url(${foodBackground})`, backgroundSize: "cover" }}>
-          <div className="container mx-auto relative">
-            <Slider
-            dots={false}
-            infinite
-            speed={500}
-            slidesToShow={5}
-            slidesToScroll={5}
-            prevArrow={<div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer">&lt;</div>}
-            nextArrow={<div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer">&gt;</div>}
-          >
-  {filteredRestaurants.map((restaurant, index) => (
-  <a key={index} href={restaurant.googleLink} target="_blank" rel="noopener noreferrer">
-    <div className="p-4">
-      <div className="bg-white p-4 rounded-lg shadow-lg transition duration-300 transform hover:shadow-xl hover:scale-105">
-        <h3 className="text-lg font-semibold">{restaurant.name}</h3>
-        <p className="text-gray-600">Suburb: {restaurant.suburb}</p>
-        <p className="text-gray-600">Cuisine: {restaurant.cuisine}</p>
-        <p className={`text-blue-600 ${index === 0 ? 'underline' : ''}`}>Google Link</p>
+function RestaurantDetails({ name, cuisine, phone, address, rating, web_url }) {
+  console.log('Cuisine:', cuisine);
+  console.log('Phone:', phone);
+  console.log('Address:', address);
+  return (
+    <a className="max-w-md mx-auto flex justify-around flex-col group bg-white rounded-lg overflow-hidden hover:shadow-lg transition" href={web_url} target="_blank" rel="noopener noreferrer" style={{ flex: '1 1 300px' }}>
+      <div className="relative pt-[40%] sm:pt-[50%] lg:pt-[60%] rounded-t-lg overflow-hidden">
+        <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl" src={cafeImage} alt="Breakfast Suggestions" />
       </div>
-    </div>
-  </a>
-))}
-            </Slider>
-            </div>
+      <div className="p-2 md:p-3">
+        <h3 className="text-xl font-bold text-gray-800 dark:text-black">{name}</h3>
+        <p className="mt-1 text-xs md:text-sm text-black">{cuisine ? cuisine.map(c => c.name).join(', ') : 'Not available'}</p>
+        <p className="mt-1 text-xs md:text-sm text-black">{phone}</p>
+        <p className="mt-1 text-xs md:text-sm text-black">{address}</p>
+        <p className="mt-1 text-xs md:text-sm text-black">Ratings: {rating}</p>
+      </div>
+    </a>
+  );
+}
+  
+function BreakfastRestaurants() {
+  const [breakfastRestaurants, setBreakfastRestaurants] = useState([]);
+  const [asianRestaurants, setAsianRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showMorningDetails, setShowMorningDetails] = useState(false);
+  const [showAsianDetails, setShowAsianDetails] = useState(false);
+  const [showFunFacts, setShowFunFacts] = useState(false); // Define showFunFacts state
+
+  // Array of location IDs for the top 10 breakfast restaurants
+  const breakfastLocationIds = ['10536000', '2416757', '4230172', '1971945', '4096822', '2432079', '7911768', '2458396', '2511491', '6740127'];
+  
+  const asianLocationIds = ['5539081','16894781','3348084','9554485','528619'];
+
+  useEffect(() => {
+    const fetchRestaurantDetails = async (locationIds) => {
+      try {
+        const apiKey = process.env.REACT_APP_TRIPADVISOR_API_KEY;
+        const proxyUrl = 'http://localhost:5000/api?url=';
+
+        const restaurantData = [];
+
+        for (const locationId of locationIds) {
+          const url = `${proxyUrl}https://api.content.tripadvisor.com/api/v1/location/${locationId}/details?key=${apiKey}`;
+          const response = await fetch(url);
+          const data = await response.json();
+
+          restaurantData.push(data);
+        }
+        console.log('Restaurant Details:', restaurantData);
+        return restaurantData;
+        
+      } catch (error) {
+        console.error('Error fetching restaurant data:', error);
+        return [];
+      }
+    };
+
+    const fetchBreakfastDetails = async () => {
+      const breakfastData = await fetchRestaurantDetails(breakfastLocationIds);
+      setBreakfastRestaurants(breakfastData);
+      console.log('Breakfast Data:', breakfastData);
+    };
+    const fetchAsianDetails = async () => {
+      const asianData = await fetchRestaurantDetails(asianLocationIds);
+      setAsianRestaurants(asianData);
+      console.log('Asian Data:', asianData);
+    };
+  
+    fetchBreakfastDetails();
+    fetchAsianDetails();
+    setLoading(false);
+  }, []);
+
+  const [factIndex, setFactIndex] = useState(null);
+
+  // Array of fun food facts
+  const funFacts = [
+    "Did you know that the iconic Australian spread Vegemite was invented in Melbourne in 1922?!",
+    "Melbourne is known for its vibrant coffee culture, boasting more cafes and coffee roasters per capita than any other city in the world.",
+    "Melbourne's diverse culinary scene includes influences from around the globe, with renowned dining precincts offering everything from authentic Italian pasta to spicy Sichuan cuisine!",
+    "Melbourne is known for its love of brunch, with cafes serving up innovative and Instagram-worthy dishes like smashed avocado toast, colorful smoothie bowls, and decadent pancakes.",
+  ];
+
+  const handleClick = (index) => {
+    setFactIndex(index);
+  };
+
+  const renderFunFacts = () => {
+    const funFactImages = [funFact1, funFact2, funFact3, funFact4];
+  
+    return (
+      <div className="container mx-auto py-4">
+        <h1 className="text-4xl font-bold mb-4 text-center text-black"> FOOD FACTS </h1>
+        <div className="flex justify-center">
+          <div className="w-full max-w-screen-xl">
+            <Splide options={{
+              perPage: 3,
+              rewind: true,
+              width: '100%',
+              gap: '1rem',
+              padding: { right: '5rem', left: '5rem' },
+              autoplay: true,
+              pauseOnHover: true,
+              autoplaySpeed: 3000,
+              type: 'loop'
+            }}>
+              {funFactImages.map((image, index) => (
+                <SplideSlide key={index} className="hover:scale-105">
+                  <img src={image} alt={`Fun Fact ${index + 1}`} onClick={() => handleClick(index)} />
+                </SplideSlide>
+              ))}
+            </Splide>
           </div>
+        </div>
+        {factIndex !== null && (
+          <div className="relative mt-16">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-amber-200 rounded-lg p-4 shadow-md">
+                <p className="text-lg font-medium font-comic-sans text-gray-800">{funFacts[factIndex]}</p>
+              </div>
+            </div>
+        </div>   
+        )}
+      </div>
+    );
+  };
+           
+        
+  return (
+    <div>
+      <Header />
+      <div className="relative bg-cover bg-center h-64 flex flex-col justify-center items-center text-white">
+        <img
+          src={bannerImage}
+          alt="Restaurants"
+          className="absolute inset-0 h-full w-full object-cover opacity-100"
+        />
+        <div className="absolute top-1/3 transform -translate-y-1/2 text-center">
+          <div className="bg-black bg-opacity-50 text-white text-5xl font-bold py-2 px-4 rounded">
+            ALL ABOUT FOOD IN MELBOURNE
+          </div>
+          <p className="bg-black bg-opacity-50 text-white text-xl font-bold py-2 px-4 rounded">
+            Discover the best food spots
+          </p>
+        </div>
+      </div>
 
-        {/* No restaurants found messages */}
-         
-         {filteredRestaurants.length === 0 &&
-           selectedCuisine &&
-           selectedSuburb && (
-             <div className="filtered-restaurants mt-6">
-               <h2 className="text-xl font-bold mb-2">
-                 No restaurants found with the selected cuisine!
-               </h2>
-             </div>
-           )}
-       </>
-     )}
-     
+      {/* Render food facts */}
+      {renderFunFacts()}
 
-
-     {/* Play Spin Whee`l */}
-     {selectedModule === "Play Spin Wheel" && <div className="spin-wheel-container">
-         <SpinWheel />
-       </div>}
-     <Footer />
-   </div>
- );
+      <div className="mt-16"></div>
+      <div className="container mx-auto py-4">
+       <h1 className="text-4xl font-bold mb-4 text-black"> UNCOVER THE BEST CAFES AND FINEST ASIAN CUISINES</h1>
+       <div className="flex justify-center">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto">
+          <CardComponent
+            title="Cafes"
+            description="Explore Best Cafes in Melbourne CBD"
+            image={breakfastpic}
+            toggleDetails={() => setShowMorningDetails(!showMorningDetails)}
+           
+          />
+          {/* Card 2: Lunch & Dinner */}
+          <CardComponent
+            title="Asian restaurants"
+            description="Top Asian restaurants in Melbourne CBD"
+            image={asianFood}
+            toggleDetails={() => setShowAsianDetails(!showAsianDetails)}
+            
+          />
+        </div>
+        </div>
+      </div>
+  
+      {showMorningDetails && (
+        <div className="bg-yellow-300">
+          <div className="container mx-auto py-4 py-6 relative">
+            <h1 className="text-5xl font-bold mb-4 text-center text-black">Morning Delights: Best Cafes</h1>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <Splide options={{
+                perPage: 3,
+                rewind: true,
+                width: '100%',
+                gap: '1rem',
+                padding: { right: '5rem', left: '5rem' },
+                autoplay: true,
+                pauseOnHover: true,
+                autoplaySpeed: 3000,
+                type: 'loop'
+              }}>
+                {breakfastRestaurants.map((restaurant, index) => (
+                  <SplideSlide key={index}>
+                    <RestaurantDetails
+                      name={restaurant.name}
+                      cuisine={restaurant.cuisine}
+                      phone={restaurant.phone}
+                      address={`${restaurant.address_obj ? restaurant.address_obj.street1 : 'Address not available'}, ${restaurant.address_obj ? restaurant.address_obj.city : ''}, ${restaurant.address_obj ? restaurant.address_obj.state : ''}, ${restaurant.address_obj ? restaurant.address_obj.country : ''}, ${restaurant.address_obj ? restaurant.address_obj.postalcode : ''}`}
+                      rating={restaurant.rating}
+                      web_url={restaurant.web_url}
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
+            )}
+          </div>
+        </div>
+      )}
+  
+      {showAsianDetails && (
+        <div className="bg-yellow-300">
+          {/* Slider */}
+          <div className="container mx-auto py-4 py-6 relative">
+            <h1 className="text-5xl font-bold mb-4 text-center text-black">Top 5 Asian Restaurants</h1>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <Splide options={{
+                perPage: 3,
+                rewind: true,
+                width: '100%',
+                gap: '1rem',
+                padding: { right: '5rem', left: '5rem' },
+                autoplay: true,
+                pauseOnHover: true,
+                autoplaySpeed: 3000,
+                type: 'loop'
+              }}>
+                {asianRestaurants.map((restaurant, index) => (
+                  <SplideSlide key={index}>
+                    <RestaurantDetails
+                      name={restaurant.name}
+                      cuisine={restaurant.cuisine}
+                      phone={restaurant.phone}
+                      address={`${restaurant.address_obj ? restaurant.address_obj.street1 : 'Address not available'}, ${restaurant.address_obj ? restaurant.address_obj.city : ''}, ${restaurant.address_obj ? restaurant.address_obj.state : ''}, ${restaurant.address_obj ? restaurant.address_obj.country : ''}, ${restaurant.address_obj ? restaurant.address_obj.postalcode : ''}`}
+                      rating={restaurant.rating}
+                      web_url={restaurant.web_url}
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
+            )}
+          </div>
+        </div>
+      )}
+  
+      <Footer />
+    </div>
+  );
 }
 
-
-export default RestaurantSearch;
+export default BreakfastRestaurants;

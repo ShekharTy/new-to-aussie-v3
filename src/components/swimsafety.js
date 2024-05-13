@@ -125,13 +125,9 @@ function SwimSafety() {
     return (
        
         <div id="swim">
-            <h2>Learn Beach Safety & Regulatory Signs</h2>
-            <p>
-            Welcome to the section dedicated to beach safety learning! We believe that enjoying the beach should be both fun and safe. Whether you're a seasoned beachgoer or someone new to the coastal environment, there's always something new to learn about staying safe by the water.
-            </p>  
-
+            <h2>Learn Genereal Beach Safety Rules & Signs</h2>
             <div className="banner">
-                <img src={bannerImage} alt="Banner" className="banner-image" />
+        <img src={bannerImage} alt="Banner" className="banner-image" />
                 </div>
                  
             <h3>Why is beach safety important?</h3>
