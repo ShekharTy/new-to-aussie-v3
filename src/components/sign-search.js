@@ -153,7 +153,7 @@ function Signsearch() {
             {result !== null && (
                 <><section>
                     <h1>The information about the inputed image below:</h1>
-                    {result.similarity < 0.3 ? (
+                    {result.similarity < 0.1 ? (
                         <><p>Sign name: {result.matchName}</p><p>Description: {result.matchDescription}</p></>
                     ) : (
                         <p>We can't find the information for the image.</p>
