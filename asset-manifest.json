@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/new-to-aussie-v3/static/css/main.f808871a.css",
-    "main.js": "/new-to-aussie-v3/static/js/main.378de686.js",
+    "main.js": "/new-to-aussie-v3/static/js/main.0932bc5a.js",
     "reactPlayerYouTube.js": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js",
     "reactPlayerSoundCloud.js": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js",
     "reactPlayerVimeo.js": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js",
@@ -74,7 +74,7 @@
     "static/media/slick.woff": "/new-to-aussie-v3/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-to-aussie-v3/index.html",
     "main.f808871a.css.map": "/new-to-aussie-v3/static/css/main.f808871a.css.map",
-    "main.378de686.js.map": "/new-to-aussie-v3/static/js/main.378de686.js.map",
+    "main.0932bc5a.js.map": "/new-to-aussie-v3/static/js/main.0932bc5a.js.map",
     "reactPlayerYouTube.0cb0e76b.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js.map",
     "reactPlayerSoundCloud.db33077e.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js.map",
     "reactPlayerVimeo.c4ddc4a5.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js.map",
@@ -93,6 +93,6 @@
   },
   "entrypoints": [
     "static/css/main.f808871a.css",
-    "static/js/main.378de686.js"
+    "static/js/main.0932bc5a.js"
   ]
 }
