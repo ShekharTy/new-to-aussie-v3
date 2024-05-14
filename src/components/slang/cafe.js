@@ -28,19 +28,18 @@ function VisitingCafe() {
     const handleOptionSelect = (option) => {
         const currentDecision = decisionPoints[currentPoint];
         if (option === currentDecision.correct) {
-            if (currentPoint < decisionPoints.length) {
+            if (currentPoint < decisionPoints.length - 1) {
                 setCurrentPoint(currentPoint + 1);
+            } else {
+                setCompleted(true);  // Mark the scenario as completed when the last correct option is chosen
             }
             setShowOptions(false);
-            setPlaying(true);  // Continue playing the video
+            setPlaying(true);
         } else {
             alert('Try again! Select the right Aussie slang.');
         }
     };
 
-    const handleVideoEnd = () => {
-        setCompleted(true);  // Set completion when the video ends
-    };
 
     const startVideo = () => {
         setShowDescription(false);
@@ -76,7 +75,6 @@ function VisitingCafe() {
                         muted={false}
                         controls={false}
                         onProgress={handleProgress}
-                        onEnded={handleVideoEnd}
                         onStart={() => setPlaying(true)}
                         width="100%"
                         height="100%"

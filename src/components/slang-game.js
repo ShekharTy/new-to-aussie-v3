@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import Header from './header';
 import Footer from './footer';
 import VisitingFriendsHouse from './slang/visit-friend';
 import Cafe from './slang/cafe';
+import VisitingBeach from './slang/visit-beach';
 import '../styles/slang-game.css';
 
 function SlangGame() {
     const [activeScenario, setActiveScenario] = useState(null);
-
+    useEffect(() => {
+        document.title = `New To Aussie - Slang Scenario`;
+    });
     const scenarios = [
         { id: 1, title: "Going to a Cafe", component: Cafe },
         { id: 2, title: "Visiting a friends house", component: VisitingFriendsHouse },
-        { id: 3, title: "Slang in Music" } // Consider adding components for other scenarios
+        { id: 3, title: "Day out at the Beach" , component: VisitingBeach} 
     ];
 
     const handleScenarioClick = (scenarioId) => {

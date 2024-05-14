@@ -5,7 +5,7 @@ import Footer from './footer';
 function SlangTranslator() {
 
     useEffect(() => {
-        document.title = `OZLINGO - Aussie Slang Translator`;
+        document.title = `New To Aussie - Slang Translator`;
     });
 
     const handleBotClick = () => {
