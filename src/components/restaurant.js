@@ -49,27 +49,41 @@ function BreakfastRestaurants() {
   useEffect(() => {
     const fetchRestaurantDetails = async (locationIds) => {
       try {
-        const apiKey = process.env.REACT_APP_TRIPADVISOR_API_KEY;
-        const proxyUrl = 'http://localhost:5000/api?url=';
-
+        const apiKeys = process.env.REACT_APP_TRIPADVISOR_API_KEY.split(',');
+       
         const restaurantData = [];
-
-        for (const locationId of locationIds) {
-          const url = `${proxyUrl}https://api.content.tripadvisor.com/api/v1/location/${locationId}/details?key=${apiKey}`;
-          const response = await fetch(url);
-          const data = await response.json();
-
-          restaurantData.push(data);
+  
+        for (const apiKey of apiKeys) {
+          for (const locationId of locationIds) {
+            const url = `https://api.content.tripadvisor.com/api/v1/location/${locationId}/details?key=${apiKey}`;
+            try {
+              const response = await fetch(url);
+              if (response.ok) {
+                const data = await response.json();
+                restaurantData.push(data);
+                break; // Break the inner loop if successful
+              }
+            } catch (error) {
+              console.error('Error fetching restaurant data:', error);
+            }
+          }
+          if (restaurantData.length > 0) {
+            // Data fetched successfully, break the outer loop
+            break;
+          }
         }
+  
         console.log('Restaurant Details:', restaurantData);
         return restaurantData;
-        
+          
       } catch (error) {
         console.error('Error fetching restaurant data:', error);
         return [];
       }
     };
-
+  
+    // Call fetchRestaurantDetails with locationIds
+  
     const fetchBreakfastDetails = async () => {
       const breakfastData = await fetchRestaurantDetails(breakfastLocationIds);
       setBreakfastRestaurants(breakfastData);
