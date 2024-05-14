@@ -50,15 +50,11 @@ function BreakfastRestaurants() {
     const fetchRestaurantDetails = async (locationIds) => {
       try {
         const apiKey = process.env.REACT_APP_TRIPADVISOR_API_KEY;
-        const proxyUrl = 'http://localhost:5000/api?url=';
-
         const restaurantData = [];
-
         for (const locationId of locationIds) {
-          const url = `${proxyUrl}https://api.content.tripadvisor.com/api/v1/location/${locationId}/details?key=${apiKey}`;
+          const url = `https://api.content.tripadvisor.com/api/v1/location/${locationId}/details?key=${apiKey}`;
           const response = await fetch(url);
           const data = await response.json();
-
           restaurantData.push(data);
         }
         console.log('Restaurant Details:', restaurantData);
