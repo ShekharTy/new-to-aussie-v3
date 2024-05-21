@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/beach-quiz.css';
-
+import sign2Image from '../data/sign2.png';
+import redFlagImage from '../data/red_flag.png';
+import yellowFlagImage from '../data/yellow_flag.png';
+import noSwimmingImage from '../data/no_swimming.png';
+import noCampingImage from '../data/no_camping.png';
+import ripImage from '../data/rip.png';
+import stingersImage from '../data/stingers.png';
+import guttersImage from '../data/gutters.png';
 
 const questions = [
   { 
-    imageSrc: require('../data/sign2.png'),
+    imageSrc: sign2Image,
     questionText: 'What do red and yellow flags at the beach signify?',
     answerOptions: [
       { answerText: 'Water skiing area', isCorrect: false },
@@ -15,7 +21,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/red_flag.png'),
+    imageSrc: redFlagImage,
     questionText: 'What does a red flag on the beach indicate?',
     answerOptions: [
       { answerText: 'Safe to swim', isCorrect: false },
@@ -25,7 +31,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/yellow_flag.png'),
+    imageSrc: yellowFlagImage,
     questionText: 'If you see a yellow flag at the beach, what does it mean?',
     answerOptions: [
       { answerText: 'Sharks have been spotted', isCorrect: false },
@@ -35,7 +41,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/no_swimming.png'),
+    imageSrc: noSwimmingImage,
     questionText: 'What does this sign at the beach signify?',
     answerOptions: [
       { answerText: 'Swimming is advised', isCorrect: false },
@@ -45,7 +51,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/no_camping.png'),
+    imageSrc: noCampingImage,
     questionText: 'You notice a sign like this." What does this mean?',
     answerOptions: [
       { answerText: 'Camping is allowed during the day', isCorrect: false },
@@ -55,7 +61,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/rip.png'),
+    imageSrc: ripImage,
     questionText: 'Which sign indicates that there are dangerous currents that could carry swimmers away from the shore?',
     answerOptions: [
       { answerText: 'Long Beach', isCorrect: false },
@@ -65,7 +71,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/stingers.png'),
+    imageSrc: stingersImage,
     questionText: 'What does a sign warning of "Marine Stingers" imply?',
     answerOptions: [
       { answerText: 'The water is safe for swimming', isCorrect: false },
@@ -75,7 +81,7 @@ const questions = [
     ],
   },
   {
-    imageSrc: require('../data/gutters.png'),
+    imageSrc: guttersImage,
     questionText: 'Why should you be cautious of if there\'s a sign indicating "Sudden Drop Off"?',
     answerOptions: [
       { answerText: 'Sharks in the vicinity', isCorrect: false },
@@ -88,118 +94,81 @@ const questions = [
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
-  const [showReviewPage, setShowReviewPage] = useState(false);
+  const [showScore, setShowScore] = useState(false);
+  const [score, setScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
 
-  // This function handles the logic when a user selects an answer
-  const handleAnswerOptionClick = (answerOption) => {
-    const newUserAnswers = [...userAnswers];
-    newUserAnswers[currentQuestion] = answerOption;
-    setUserAnswers(newUserAnswers);
+  const handleAnswerButtonClick = (isCorrect, answerText) => {
+      const newUserAnswers = [...userAnswers, { 
+          question: questions[currentQuestion].questionText, 
+          answer: answerText,
+          isCorrect: isCorrect,
+          correctAnswer: questions[currentQuestion].answerOptions.find(option => option.isCorrect).answerText
+      }];
+      setUserAnswers(newUserAnswers);
+
+      if (isCorrect) {
+          setScore(score + 1);
+      }
+
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+          setCurrentQuestion(nextQuestion);
+      } else {
+          setShowScore(true);
+      }
   };
 
-  // Function to advance to the next question
-  const handleNextQuestion = () => {
-    const nextQuestionIndex = currentQuestion + 1;
-    if (nextQuestionIndex < questions.length) {
-      setCurrentQuestion(nextQuestionIndex);
-    } else {
-      setShowReviewPage(true); // Show review page when all questions have been answered
-    }
-  };
-  
-  // Function to check if the question is answered
-  const isQuestionAnswered = (index) => {
-    return userAnswers[index] !== null;
+  const restartQuiz = () => {
+      setScore(0);
+      setCurrentQuestion(0);
+      setShowScore(false);
+      setUserAnswers([]);
   };
 
-  // Function to go back to the previous question
-  const handlePreviousQuestion = () => {
-    const prevQuestionIndex = currentQuestion - 1;
-    if (prevQuestionIndex >= 0) {
-      setCurrentQuestion(prevQuestionIndex);
-    }
-  };
-
-  // Reset the quiz to its initial state
-  const resetQuiz = () => {
-    setCurrentQuestion(0);
-    setUserAnswers(Array(questions.length).fill(null));
-    setShowReviewPage(false);
-  };
-
-  // Calculate score for the scoreboard
-  const calculateScore = () => {
-    return userAnswers.filter(answer => answer?.isCorrect).length;
-  };
-
-  // Component for reviewing answers at the end
-  const ReviewPage = () => (
-    <div className="review-page">
-      <h1>Your Score: {calculateScore()} / {questions.length}</h1>
-      {questions.map((question, index) => {
-        const userAnswer = userAnswers[index];
-        const isCorrect = userAnswer?.isCorrect;
-        return (
-          <div key={index} className="review-item">
-            <img src={question.imageSrc} alt={`Question ${index + 1}`} className="question-image"/>
-            <div className="question-text">{question.questionText}</div>
-            <div className={`answer ${isCorrect ? 'correct' : 'incorrect'}`}>
-              Your answer: {userAnswer?.answerText} {isCorrect ? '✔' : '✖'}
-            </div>
-            {!isCorrect && (
-              <div className="answer correct">
-                Correct answer: {question.answerOptions.find(option => option.isCorrect).answerText} ✔
-              </div>
-            )}
-          </div>
-        );
-      })}
-      <button onClick={resetQuiz} className="reset-quiz-btn">Redo Quiz</button>
-    </div>
-  );
+  const progressWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
 
   return (
-    <div className="quiz-container">
-      <div className="quiz-layout">
-        <div className="quiz">
-          {showReviewPage ? (
-            <ReviewPage />
-          ) : (
-            <>
-              <div className="progress-tracker">
-                Question {currentQuestion + 1} / {questions.length}
-              </div>
-              <div className="quiz-content">
-                <div className='question-section'>
-                  <img src={questions[currentQuestion].imageSrc} alt="Question" className="question-image" />
-                  <div className='question-text'>{questions[currentQuestion].questionText}</div>
-                </div>
-                <div className='answer-section'>
-                  {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleAnswerOptionClick(answerOption)}
-                      className={`answer-button ${userAnswers[currentQuestion]?.answerText === answerOption.answerText ? 'selected' : ''}`}
-                    >
-                      {String.fromCharCode(65 + index)}. {answerOption.answerText}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="quiz-navigation">
-                {currentQuestion > 0 && <button onClick={handlePreviousQuestion}>Previous</button>}
-                {currentQuestion < questions.length - 1 && (
-                  <button onClick={handleNextQuestion}>Next</button>
-                )}
-                {currentQuestion === questions.length - 1 && <button onClick={() => setShowReviewPage(true)}>Submit</button>}
-              </div>
-            </>
-          )}
-        </div>
+      <div>
+          <h1>Beach Quiz</h1>
+          <div className='quiz-rs'>
+              {showScore ? (
+                  <div className='score-section-rs'>
+                      <div>You scored {score} out of {questions.length}</div>
+                      <ul className='answers-list-rs'>
+                          {userAnswers.map((userAnswer, index) => (
+                              <li key={index} className={`user-answer-rs ${userAnswer.isCorrect ? 'correct' : 'incorrect'}`}>
+                                  <p><strong>Q:</strong> {userAnswer.question}</p>
+                                  <p>Your answer: {userAnswer.answer}</p>
+                                  {!userAnswer.isCorrect && <p>Correct answer: {userAnswer.correctAnswer}</p>}
+                              </li>
+                          ))}
+                      </ul>
+                      <button onClick={restartQuiz} className="restart-button-rs">Restart Quiz</button>
+                  </div>
+              ) : (
+                  <>
+                      <div className='progress-bar-rs' style={{ width: progressWidth }}></div>
+                      <div className='question-section-rs'>
+                          <div className='question-count-rs'>
+                              <span>Question {currentQuestion + 1}</span>/{questions.length}
+                          </div>
+                          {questions[currentQuestion].imageSrc && (
+                              <img src={questions[currentQuestion].imageSrc} alt="Beach Sign" className="question-image-rs" />
+                          )}
+                          <div className='question-text-rs'>{questions[currentQuestion].questionText}</div>
+                      </div>
+                      <div className='answer-section-rs'>
+                          {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                              <button key={index} onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)} className="answer-option-rs">
+                                  {answerOption.answerText}
+                              </button>
+                          ))}
+                      </div>
+                  </>
+              )}
+          </div>
       </div>
-    </div>
   );
 };
 
