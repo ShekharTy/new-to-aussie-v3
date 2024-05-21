@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from 'react';
 import Header from "./header";
 import Footer from "./footer";
 import slangData from "../data/aussie_slang.json";
@@ -14,7 +15,9 @@ const selectedSlangs = slangs.filter(() => Math.random() < 3 / slangs.length);
 
 function SlangLearning() {
   const [term, setTerm] = useState("");
-
+  useEffect(() => {
+    document.title = `New To Aussie - Slang Search`;
+});
   const filtered = slangs.filter(
     (slang) =>
       slang.slang.toLowerCase().includes(term.toLowerCase()) ||

@@ -61,9 +61,7 @@ function BreakfastRestaurants() {
     const fetchRestaurantDetails = async (locationIds) => {
       try {
         const apiKeys = process.env.REACT_APP_TRIPADVISOR_API_KEY.split(',');
-       
 
-       
         const restaurantData = [];
   
         for (const apiKey of apiKeys) {

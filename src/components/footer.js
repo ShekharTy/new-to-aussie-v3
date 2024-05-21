@@ -26,11 +26,11 @@ function Footer() {
           <div className="px-4 py-2 m-2">
             <nav className="list-none">
               <li><button onClick={() => navigate('/')} className="text-white hover:text-gray-200 flex items-center"><FaHome className="mr-2"/>Home</button></li>
+              <li><button onClick={() => navigate('/slang-learning')} className="text-white hover:text-gray-200 flex items-center"><FaInfoCircle className="mr-2"/>Aussie Slang</button></li>
               <li><button onClick={() => navigate('/road-safety')} className="text-white hover:text-gray-200 flex items-center"><FaRoad className="mr-2"/>Road Safety</button></li>
               <li><button onClick={() => navigate('/beach-safety')} className="text-white hover:text-gray-200 flex items-center"><FaSwimmer className="mr-2"/>Beach Safety</button></li>
               <li><button onClick={() => navigate('/events')} className="text-white hover:text-gray-200 flex items-center"><FaCalendarAlt className="mr-2"/>Events</button></li>
               <li><button onClick={() => navigate('/restaurant')} className="text-white hover:text-gray-200 flex items-center"><FaUtensils className="mr-2"/>Restaurants</button></li>
-              <li><button onClick={() => navigate('/attribution')} className="text-white hover:text-gray-200 flex items-center"><FaInfoCircle className="mr-2"/>Attributions</button></li>
             </nav>
           </div>
         </div>
