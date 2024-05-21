@@ -4,21 +4,32 @@ import Header from "./header";
 import Footer from "./footer";
 import CardComponent from './card'; 
 import '@splidejs/react-splide/css'; 
+import RestaurantSearch from './restaurant1';
 import bannerImage from '../data/foodbg1.jpg';
 import cafeImage from '../data/breakkie.jpg';
 import breakfastpic from '../data/bfcard.jpg';
 import asianFood from '../data/asianFoodCardPic.jpg';
 import funFact1 from '../data/vegemite.jpg';
 import funFact2 from '../data/coffee.jpg';
-import funFact3 from '../data/melb_multiculture.jpg';
-import funFact4 from '../data/man_eating.jpg';
+import funFact3 from '../data/tramcar.jpg';
+import funFact4 from '../data/coffee.jpg';
+import funFact5 from '../data/melb_multiculture.jpg';
+import funFact6 from '../data/lamington.jpg';
+import funFact7 from '../data/seafood.jpg';
+import funFact8 from '../data/meatpie.jpg';
+import funFact9 from '../data/kangaroo.jpg';
+import funFact10 from '../data/melb_multiculture.jpg';
+import funFact11 from '../data/timtam.jpeg';
+import funFact12 from '../data/melb_multiculture.jpg';
+import funFact13 from '../data/anzac.jpg';
+
 
 function RestaurantDetails({ name, cuisine, phone, address, rating, web_url }) {
   console.log('Cuisine:', cuisine);
   console.log('Phone:', phone);
   console.log('Address:', address);
   return (
-    <a className="max-w-md mx-auto flex justify-around flex-col group bg-white rounded-lg overflow-hidden hover:shadow-lg transition" href={web_url} target="_blank" rel="noopener noreferrer" style={{ flex: '1 1 300px' }}>
+    <div className="max-w-md mx-auto flex justify-around flex-col group bg-white rounded-lg overflow-hidden hover:shadow-lg transition" href={web_url} target="_blank" rel="noopener noreferrer" style={{ flex: '1 1 300px' }}>
       <div className="relative pt-[40%] sm:pt-[50%] lg:pt-[60%] rounded-t-lg overflow-hidden">
         <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl" src={cafeImage} alt="Breakfast Suggestions" />
       </div>
@@ -29,7 +40,7 @@ function RestaurantDetails({ name, cuisine, phone, address, rating, web_url }) {
         <p className="mt-1 text-xs md:text-sm text-black">{address}</p>
         <p className="mt-1 text-xs md:text-sm text-black">Ratings: {rating}</p>
       </div>
-    </a>
+    </div>
   );
 }
   
@@ -50,7 +61,7 @@ function BreakfastRestaurants() {
     const fetchRestaurantDetails = async (locationIds) => {
       try {
         const apiKeys = process.env.REACT_APP_TRIPADVISOR_API_KEY.split(',');
-       
+
         const restaurantData = [];
   
         for (const apiKey of apiKeys) {
@@ -105,25 +116,36 @@ function BreakfastRestaurants() {
   // Array of fun food facts
   const funFacts = [
     "Did you know that the iconic Australian spread Vegemite was invented in Melbourne in 1922?!",
-    "Melbourne is known for its vibrant coffee culture, boasting more cafes and coffee roasters per capita than any other city in the world.",
-    "Melbourne's diverse culinary scene includes influences from around the globe, with renowned dining precincts offering everything from authentic Italian pasta to spicy Sichuan cuisine!",
-    "Melbourne is known for its love of brunch, with cafes serving up innovative and Instagram-worthy dishes like smashed avocado toast, colorful smoothie bowls, and decadent pancakes.",
-  ];
+    "Melbourne has the highest number of cafes and restaurants per number of people than any other city in the world.",
+    "The top-rated restaurant in Melbourne is a tram! The Colonial Tramcar Restaurant takes passengers around the city while they dine on meals prepared by some of the best chefs in the city!",
+    "Melbourne generally imports 30 tons of coffee beans per day. That is enough to make 3M cups of coffee",
+    "Melbourne is the city with the largest Greek population outside of Athens.",
+    "Lamingtons are a beloved Australian dessert",
+    "Australia produces some of the finest seafood in the world",
+    "The meat pie is an Aussie staple",
+    "Kangaroo meat is consumed in Australia",
+    "Bush tucker is a unique culinary experience in Australia",
+    "Tim Tams are a beloved Australian chocolate biscuit",
+    "Australian cuisine is heavily influenced by diverse cultural backgrounds",
+    "The ANZAC biscuit originated during world war 1 is a symbol of remembrance for Australian and New Zealand soldiers."];
 
   const handleClick = (index) => {
     setFactIndex(index);
   };
 
   const renderFunFacts = () => {
-    const funFactImages = [funFact1, funFact2, funFact3, funFact4];
+    const funFactImages = [funFact1, funFact2, funFact3, funFact4,
+      funFact5,funFact6,funFact7,funFact8,funFact9,funFact10,funFact11,funFact12,
+      funFact13];
   
-    return (
+  return (
+    <div className="bg-yellow-200">
       <div className="container mx-auto py-4">
         <h1 className="text-4xl font-bold mb-4 text-center text-black"> FOOD FACTS </h1>
         <div className="flex justify-center">
           <div className="w-full max-w-screen-xl">
             <Splide options={{
-              perPage: 3,
+              perPage: 2,
               rewind: true,
               width: '100%',
               gap: '1rem',
@@ -142,19 +164,18 @@ function BreakfastRestaurants() {
           </div>
         </div>
         {factIndex !== null && (
-          <div className="relative mt-16">
+          <div className="relative mt-20">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-amber-200 rounded-lg p-4 shadow-md">
-                <p className="text-lg font-medium font-comic-sans text-gray-800">{funFacts[factIndex]}</p>
+              <div className="bg-teal-100 rounded-lg p-4 shadow-md text-center w-64 h-54">
+                <p className="text-lg font-medium font-sans text-black">{funFacts[factIndex]}</p>
               </div>
             </div>
         </div>   
         )}
       </div>
+      </div>
     );
-  };
-           
-        
+  };    
   return (
     <div>
       <Header />
@@ -177,9 +198,10 @@ function BreakfastRestaurants() {
       {/* Render food facts */}
       {renderFunFacts()}
 
-      <div className="mt-16"></div>
+      <div className="bg-yellow-100">
+      <div className="mt-20"></div>
       <div className="container mx-auto py-4">
-       <h1 className="text-4xl font-bold mb-4 text-black"> UNCOVER THE BEST CAFES AND FINEST ASIAN CUISINES</h1>
+       <h1 className="text-5xl font-bold mb-4  text-center text-black"> UNCOVER THE BEST CAFES AND FINEST ASIAN CUISINES</h1>
        <div className="flex justify-center">
          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto">
           <CardComponent
@@ -197,6 +219,7 @@ function BreakfastRestaurants() {
             toggleDetails={() => setShowAsianDetails(!showAsianDetails)}
             
           />
+        </div>
         </div>
         </div>
       </div>
@@ -273,9 +296,15 @@ function BreakfastRestaurants() {
           </div>
         </div>
       )}
-  
+        <div className="bg-yellow-300">
+          {/* Slider */}
+            <div className="container mx-auto py-4 py-6 relative">
+              <h1 className="text-5xl font-bold mb-4 text-center text-black">Satisfy Your Cravings: Find Restaurants by Cuisine</h1>
+                <RestaurantSearch />
+            </div>
       <Footer />
-    </div>
+  </div>
+</div>
   );
 }
 
