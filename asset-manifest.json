@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/new-to-aussie-v3/static/css/main.b77d74c7.css",
-    "main.js": "/new-to-aussie-v3/static/js/main.195d0bf7.js",
+    "main.css": "/new-to-aussie-v3/static/css/main.a8f4e971.css",
+    "main.js": "/new-to-aussie-v3/static/js/main.f2c56ec0.js",
     "reactPlayerYouTube.js": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js",
     "reactPlayerSoundCloud.js": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js",
     "reactPlayerVimeo.js": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js",
@@ -22,6 +22,7 @@
     "static/media/beach.jpg": "/new-to-aussie-v3/static/media/beach.9918111e70610e2c6a55.jpg",
     "static/media/scenario2.mp4": "/new-to-aussie-v3/static/media/scenario2.ca737512fbc78006e2e8.mp4",
     "static/media/visit.mp4": "/new-to-aussie-v3/static/media/visit.49221aa90f7be15059e1.mp4",
+    "static/media/kangaroo.jpg": "/new-to-aussie-v3/static/media/kangaroo.2e133181af684ba5c1df.jpg",
     "static/media/scenario3.mp4": "/new-to-aussie-v3/static/media/scenario3.a8c3ea3a67ff746dcfb9.mp4",
     "static/media/events.jpg": "/new-to-aussie-v3/static/media/events.7477cfa81acd263887d2.jpg",
     "static/media/events_bg.jpg": "/new-to-aussie-v3/static/media/events_bg.c3f0a1cc710c01154f4a.jpg",
@@ -30,14 +31,22 @@
     "static/media/swim_banner.jpg": "/new-to-aussie-v3/static/media/swim_banner.d6a7ce60ac206aeb95ae.jpg",
     "static/media/bg2.jpg": "/new-to-aussie-v3/static/media/bg2.aa428b8940f96ced8602.jpg",
     "static/media/foodbg1.jpg": "/new-to-aussie-v3/static/media/foodbg1.901b797f27e3037d50b1.jpg",
+    "static/media/tramcar.jpg": "/new-to-aussie-v3/static/media/tramcar.7a2730486f7d35c71594.jpg",
     "static/media/food.jpg": "/new-to-aussie-v3/static/media/food.f679b7edabcd7c6278e8.jpg",
     "static/media/slang.jpg": "/new-to-aussie-v3/static/media/slang.de75534c33f17a228ce1.jpg",
+    "static/media/seafood.jpg": "/new-to-aussie-v3/static/media/seafood.3b26aa07ba4987a44606.jpg",
+    "static/media/meatpie.jpg": "/new-to-aussie-v3/static/media/meatpie.287fe383bf7dcf2735b2.jpg",
     "static/media/logo.png": "/new-to-aussie-v3/static/media/logo.fcfa6652f2ae4a99dfa3.png",
+    "static/media/cuisineFinal.csv": "/new-to-aussie-v3/static/media/cuisineFinal.caab653ca046fb831035.csv",
     "static/media/road.jpg": "/new-to-aussie-v3/static/media/road.d0de0a2b5a46550631c0.jpg",
+    "static/media/restaurant_banner.jpg": "/new-to-aussie-v3/static/media/restaurant_banner.0c6cef8f3a2b68ea831b.jpg",
+    "static/media/anzac.jpg": "/new-to-aussie-v3/static/media/anzac.11329f04d4c339c6ca27.jpg",
     "static/media/breakkie.jpg": "/new-to-aussie-v3/static/media/breakkie.3b2a23564d980d00ebfc.jpg",
     "static/media/vb.png": "/new-to-aussie-v3/static/media/vb.91120c0aebb1c787d202.png",
+    "static/media/timtam.jpeg": "/new-to-aussie-v3/static/media/timtam.7da4f8a2e5e461a9c973.jpeg",
     "static/media/kao.png": "/new-to-aussie-v3/static/media/kao.253eda9a28275eb3c9b7.png",
     "static/media/kango.png": "/new-to-aussie-v3/static/media/kango.aadf8f06c2e5c300e719.png",
+    "static/media/lamington.jpg": "/new-to-aussie-v3/static/media/lamington.3a2f0765097e841b4d5b.jpg",
     "static/media/asianFoodCardPic.jpg": "/new-to-aussie-v3/static/media/asianFoodCardPic.25f22b760e6a6a272e98.jpg",
     "static/media/vb_bg2.jpg": "/new-to-aussie-v3/static/media/vb_bg2.068042b3249c1fe70332.jpg",
     "static/media/flood.jpg": "/new-to-aussie-v3/static/media/flood.45c32ef690249b7eb3df.jpg",
@@ -57,7 +66,6 @@
     "static/media/sharks.png": "/new-to-aussie-v3/static/media/sharks.53c18cebee5bf67db5af.png",
     "static/media/w_koalas.png": "/new-to-aussie-v3/static/media/w_koalas.7e22eb81c24ef1c1127b.png",
     "static/media/shared_zone.png": "/new-to-aussie-v3/static/media/shared_zone.67e8ce7114579f18a463.png",
-    "static/media/man_eating.jpg": "/new-to-aussie-v3/static/media/man_eating.5f21b6ceb7cf49645eaa.jpg",
     "static/media/coffee.jpg": "/new-to-aussie-v3/static/media/coffee.c980198c56215911f3e8.jpg",
     "static/media/no_dogs.png": "/new-to-aussie-v3/static/media/no_dogs.8babc8a54e38b0a049ca.png",
     "static/media/parking_permitted_m.png": "/new-to-aussie-v3/static/media/parking_permitted_m.e6f451e082f90aa06712.png",
@@ -81,8 +89,8 @@
     "static/media/slick.ttf": "/new-to-aussie-v3/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-to-aussie-v3/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-to-aussie-v3/index.html",
-    "main.b77d74c7.css.map": "/new-to-aussie-v3/static/css/main.b77d74c7.css.map",
-    "main.195d0bf7.js.map": "/new-to-aussie-v3/static/js/main.195d0bf7.js.map",
+    "main.a8f4e971.css.map": "/new-to-aussie-v3/static/css/main.a8f4e971.css.map",
+    "main.f2c56ec0.js.map": "/new-to-aussie-v3/static/js/main.f2c56ec0.js.map",
     "reactPlayerYouTube.0cb0e76b.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerYouTube.0cb0e76b.chunk.js.map",
     "reactPlayerSoundCloud.db33077e.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerSoundCloud.db33077e.chunk.js.map",
     "reactPlayerVimeo.c4ddc4a5.chunk.js.map": "/new-to-aussie-v3/static/js/reactPlayerVimeo.c4ddc4a5.chunk.js.map",
@@ -100,7 +108,7 @@
     "453.f6fb25a1.chunk.js.map": "/new-to-aussie-v3/static/js/453.f6fb25a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b77d74c7.css",
-    "static/js/main.195d0bf7.js"
+    "static/css/main.a8f4e971.css",
+    "static/js/main.f2c56ec0.js"
   ]
 }
